@@ -1,0 +1,32 @@
+<!-- <h2>User Details</h2> -->
+<div style="display: flex !important; align-items: center; justify-content: space-between;">
+    <div style="font-size: 18px; font-weight: bold;width: 200px;display: flex;align-items: center;
+    justify-content: space-evenly;"><mat-icon (click)="goBackToAppUsers()" class="backIcon"
+            style="border-radius: 50%; border:1px solid black; width:35px; height: 35px; display: flex; align-items: center; justify-content: center;">keyboard_backspace</mat-icon>
+        User Details</div>
+    <div style="width:30%;display:flex; align-items: center; justify-content: space-evenly;">
+        <a href="#">Send Notification</a>
+        <a href="#">Ban User</a>
+        <a href="#">Delete User</a>
+    </div>
+</div>
+<div class="container">
+    <div class="profile-section-container">
+        <div class="profile-image-section">
+            <img src="https://i.stack.imgur.com/34AD2.jpg" alt=""><br>
+            <div class="username-email">
+                <span style="font-weight: bold;">John Smith</span> &nbsp;&nbsp;
+                <span>john@gmail.com</span>
+            </div>
+        </div>
+        <div class="other-basic-details">
+            <p>Some other basic details of user account goes here.</p>
+        </div>
+    </div>
+    <div class="tabs-section">
+        <mat-tab-group mat-stretch-tabs>
+            <mat-tab label="Listings"> Content 1 </mat-tab>
+            <mat-tab label="Requests"> Content 2 </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

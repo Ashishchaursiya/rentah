@@ -1,0 +1,59 @@
+<div class="container text-center">
+    <div style="text-align: right;">
+        <i mat-dialog-close class="fa-solid fa-xmark"></i>
+    </div>
+    <hr class="my-3">
+    <form [formGroup]="form" (ngSubmit)="save()">
+
+        <!-- <div class="row mt-3">
+            <div class="col-md-5">
+                <label for="">Category ID : </label>
+            </div>
+            <div class="col-md-7">
+                <input type="text" class="form-control" formControlName="categoryId" placeholder="Enter category id">
+            </div>
+        </div> -->
+        <div class="row mt-3">
+            <div class="col-md-5">
+                <label for="">Category Image : </label>
+            </div>
+            <div class="col-md-7"
+                [class.imageClass]="(this.mode==='update'&&this.imageArray.length!=0) || (this.mode==='create'&&this.imageArray.length!=0)">
+                <div style="position:relative;">
+                    <button *ngIf="this.imageArray?.length!=0" class="close AClass" (click)="removeImage($event,inpp)">
+                        <span>&times;</span>
+                    </button>
+                    <img *ngIf="(this.mode==='update' && this.imageArray?.length!=0)||(this.mode==='create' && this.imageArray?.length!=0)"
+                        [src]="this.imageArray[0]" alt="error" style="width:60px;height:60px;border-radius:50%;" />
+                </div>
+
+                <!-- <img *ngIf="this.mode==='update'" [src]="this.data?.topicImg" alt="" style="width:50px;height:50px;border-radius:50%;"> -->
+                <div>
+                    <input type="file" (change)="selectImage($event)" class="form-control" formControlName="categoryImage"
+                        #inpp>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-5">
+                <label for="">Category Name : </label>
+            </div>
+            <div class="col-md-7">
+                <input type="text" class="form-control" formControlName="categoryName"
+                    placeholder="Enter category name">
+            </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-1"></div>
+            <div class="d-grid gap-2 col-10 mx-auto">
+                <button type="submit" class="btn btn-success" [disabled]="!form.valid">Submit</button>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </form>
+    <hr class="my-3">
+</div>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>

@@ -1,0 +1,79 @@
+<!-- <div class="container" style="width:70%; margin:0 auto;">
+    <div class="row" style="margin-bottom: 15px !important;">
+        <div class="col-sm boxShadow" style="margin-right: 10px; background-color:rgb(222, 245, 252)">
+            <h2><span style="font-weight: 300;">Overall Listings</span>  <br> 1.1k</h2>
+            <br>
+            <div style="display:flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <span>Today (25may) <br> <span style="font-weight: bold; font-size: 16px;">123</span></span>
+                <span>Last Month <br> <span style="font-weight: bold; font-size: 16px;">123</span></span>
+            </div>
+        </div>
+        <div class="col-sm boxShadow" style="margin-left: 10px; background-color: rgb(252, 223, 228);">
+            <h2><span style="font-weight: 300;">Overall Requests</span>  <br> 1.1k</h2>
+            <br>
+            <div style="display:flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <span>Today (25may) <br> <span style="font-weight: bold; font-size: 16px;">123</span></span>
+                <span>Last Month <br> <span style="font-weight: bold; font-size: 16px;">123</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px !important;">
+        <div class="col-sm boxShadow" style="margin-right: 10px; background-color: rgb(206, 255, 206);">
+            <h2><span style="font-weight: 300;">Total Users</span>  <br> 1.1k</h2>
+            <br>
+            <div style="display:flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <span>Today (25may) <br> <span style="font-weight: bold; font-size: 16px;">123</span></span>
+                <span>Last Month <br> <span style="font-weight: bold; font-size: 16px;">123</span></span>
+            </div>
+        </div>
+        <div class="col-sm boxShadow" style="margin-left: 10px; background-color: lightyellow;">
+            <h2><span style="font-weight: 300;">Overall Requests</span>  <br> 1.1k</h2>
+            <br>
+            <div style="display:flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <span>Today (25may) <br> <span style="font-weight: bold; font-size: 16px;">123</span></span>
+                <span>Last Month <br> <span style="font-weight: bold; font-size: 16px;">123</span></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner> -->
+
+<!-- NEW  -->
+<!-- <div class="container" style="width:90%; margin:0 auto;"> -->
+    <div class="roww">
+        <div class="boxShadow" style="background-color:rgb(222, 245, 252);">
+            <h2><span style="font-weight: 300;">Overall Listings</span> <br> {{dashboardData?.listing?.overall}}</h2>
+            <br>
+            <div style="display:flex; align-items: center; justify-content: space-between;">
+                <span>Today <br> <span style="font-weight: bold; font-size: 16px;">{{dashboardData?.listing?.today}}</span></span>
+                <span>Last Month <br> <span style="font-weight: bold; font-size: 16px;">{{dashboardData?.listing?.lastMonth}}</span></span>
+            </div>
+        </div>
+        <div class="boxShadow" style="background-color: rgb(252, 223, 228);">
+            <h2><span style="font-weight: 300;">Overall Requests</span> <br> {{dashboardData?.userRequest?.overall}}</h2>
+            <br>
+            <div style="display:flex; align-items: center; justify-content: space-between;">
+                <span>Today <br> <span style="font-weight: bold; font-size: 16px;">{{dashboardData?.userRequest?.today}}</span></span>
+                <span>Last Month <br> <span style="font-weight: bold; font-size: 16px;">{{dashboardData?.userRequest?.lastMonth}}</span></span>
+            </div>
+        </div>
+        <div class="boxShadow" style="background-color: rgb(206, 255, 206);">
+            <h2><span style="font-weight: 300;">Total Users</span> <br> {{dashboardData?.user?.overall}}</h2>
+            <br>
+            <div style="display:flex; align-items: center; justify-content: space-between;">
+                <span>Today <br> <span style="font-weight: bold; font-size: 16px;">{{dashboardData?.user?.today}}</span></span>
+                <span>Last Month <br> <span style="font-weight: bold; font-size: 16px;">{{dashboardData?.user?.lastMonth}}</span></span>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+<!-- NEW  -->

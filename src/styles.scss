@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/sass/style";
+
+// Replace above style with this SCSS file to enable dark mode styles
+//@import "./assets/sass/style.dark";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.custom-container .mat-dialog-container {
+    border-radius: 20px !important;
+}
+
+.custom-container-show .mat-dialog-container {
+    height: fit-content;
+}
+
+
+.custom-container1 .mat-dialog-container {
+    border-radius: 10px !important;
+    height: fit-content;
+}

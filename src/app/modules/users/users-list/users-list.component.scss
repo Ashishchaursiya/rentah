@@ -1,0 +1,22 @@
+::ng-deep .mat-tab-label-active {
+    color: #673AB7;
+    // font-size : 15px
+}
+
+.buttonAndSearch{
+    // border: 1px solid red;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.search-user{
+    width: 250px;
+}
+.full-screen-modal .mat-dialog-container {
+    padding: 1em;
+    width: 80%;
+    height: 80%;
+  }

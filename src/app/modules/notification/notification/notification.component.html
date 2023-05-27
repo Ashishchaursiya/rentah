@@ -1,0 +1,22 @@
+<h2>Send notification to all users</h2>
+<div id="notification-form">
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <div>
+            <!-- <label for="title">Title:</label> &nbsp;&nbsp; -->
+            <input type="text" placeholder="Enter title" id="message" formControlName="title">
+        </div> <br>
+        <div>
+            <!-- <label for="message">Message:</label> &nbsp;&nbsp; -->
+            <textarea placeholder="Enter Message" id="message" cols="30" rows="5" formControlName="message"></textarea>
+        </div>
+        <div> <br>
+            <button class="btn btn-success" [disabled]="!form.valid">Send Notification</button>
+        </div>
+    </form>
+
+</div>
+
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>

@@ -1,0 +1,52 @@
+.orange{
+    background-color: orange;
+    width: 70px;
+    text-align: center;
+    color: #fff;
+}
+
+.red{
+    background-color: red;
+    width: 70px;
+    text-align: center;
+    color: #fff;
+}
+
+.black{
+    background-color: black;
+    width: 70px;
+    text-align: center;
+    color: #fff;
+}
+/* Style the select element */
+select {
+    width: 110px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    color: #555;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23555"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer;
+  }
+  
+  /* Style the option elements */
+  select option {
+    padding: 10px;
+    background-color: #fff;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  /* Style the selected option element */
+  select option:checked {
+    background-color: #f0f0f0;
+  }
+  
+
+

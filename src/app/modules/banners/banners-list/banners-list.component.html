@@ -1,0 +1,126 @@
+<div class="card mb-5 mb-xl-8">
+    <!-- begin::Header -->
+    <div class="card-header border-0 pt-5">
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label fw-bolder fs-2 mb-1">All Banners</span>
+        </h3>
+
+        <!-- <div class="card-toolbar">
+            <div class="input-group mb-3">
+                <input type="text" name="searchName" [(ngModel)]="searchName" class="form-control"
+                    placeholder="Search category by name" aria-describedby="button-addon2">
+                <button *ngIf="showSearchIcon" (click)="searchCategory()" class="btn btn-primary btn-outline-secondary"
+                    type="button" id="button-addon2"> <i class="fa fa-search"></i></button>
+                <button *ngIf="!showSearchIcon" (click)="removeSearchedList()"
+                    class="btn btn-danger btn-outline-secondary" type="button" id="button-addon2"> X</button>
+            </div>
+        </div> -->
+
+        <div class="card-toolbar">
+            <a (click)="addNewBanner()" class="btn btn-sm btn-light-primary">
+                <span [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'" class="svg-icon svg-icon-3"></span>
+                New Banner
+            </a>
+        </div>
+    </div>
+    <!-- end::Header -->
+    <!-- begin::Body -->
+    <div class="card-body py-3">
+        <!-- begin::Table container -->
+        <div class="table-responsive">
+            <!-- begin::Table -->
+            <table class="table align-middle gs-0 gy-4">
+                <!-- begin::Table head -->
+                <thead>
+                    <tr class="fw-bolder text-muted bg-light">
+                        <!-- <th class="ps-3 min-w-90px">S.No.</th>
+                        <th class="ps-3 min-w-120px"></th>
+                        <th class="ps-4 min-w-100px rounded-start">Category Name</th>
+                        <th class="min-w-110px">Created On</th>
+                        <th class="min-w-70px rounded-end"></th> -->
+                        <!--  -->
+                        <th class="ps-3 min-w-90px">S.No.</th>
+                        <th class="ps-3 min-w-90px">Banner Image</th>
+                        <th class="ps-3 min-w-90px">URL</th>
+                        <th class="ps-3 min-w-90px">Name</th>
+                        <th class="ps-3 min-w-90px">Actions</th>
+                    </tr>
+                </thead>
+                <!-- end::Table head -->
+                <!-- begin::Table body -->
+                <tbody>
+                    <h2 *ngIf="allCategories.length==0; else categoryTable">No Banners found!</h2>
+                    <ng-template #categoryTable>
+                        <tr
+                            *ngFor="let category of allCategories| paginate :{itemsPerPage:8,currentPage:p};let i = index;">
+                            <td>
+                                <a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+                                    style="margin-left:15px;">
+                                    {{i+1}}
+                                </a>
+                            </td>
+                            <td>
+                                <a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">
+
+                                    <img src={{category.bannerImage}}
+                                        onerror="this.src='./assets/media/stock/600x400/img-26.jpg'" class="" alt=""
+                                        width="150" />
+
+                                </a>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex justify-content-start flex-column">
+                                        <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                            {{category.bannerURL}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+                                    style="margin-left:11px;">
+                                    {{category.bannerName }}
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <!-- VIEW DETAILS -->
+                                <!-- <a (click)="showProductDetailsDialog(category)" class="
+                          btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                          me-1
+                        ">
+                                    <span [inlineSVG]="'./assets/media/icons/duotune/general/external-alt.svg'"
+                                        class="svg-icon svg-icon-3"></span>
+                                </a> -->
+                                <a (click)="editBannerDialog(category)"
+                                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                    <span [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
+                                        class="svg-icon svg-icon-3"></span>
+                                </a>
+                                <a (click)="deleteBannerDialog(category._id)"
+                                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                    <span [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'"
+                                        class="svg-icon svg-icon-3"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </ng-template>
+
+                </tbody>
+                <!-- end::Table body -->
+            </table>
+            <!-- end::Table -->
+        </div>
+        <!-- end::Table container -->
+    </div>
+    <!-- begin::Body -->
+</div>
+
+<div class="text-center">
+    <!-- pagination -->
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>

@@ -1,0 +1,26 @@
+label {
+    font-weight: 500;
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  
+  .imageClass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 110px;
+  }
+  .AClass{
+    
+    right:-15px;
+    position: absolute;
+    background-color: rgb(255, 110, 110);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+  }

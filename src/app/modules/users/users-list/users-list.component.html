@@ -1,0 +1,290 @@
+<div class="buttonAndSearch">
+    <button class="btn btn-success" (click)="addNewBusinessUser()">+ Add New Business User</button>
+    <input type="text" placeholder="Search User" class="form-control search-user">
+</div><br>
+<mat-tab-group>
+    <mat-tab label="App Users">
+        <br>
+        <div class="card mb-5 mb-xl-8">
+            <!-- begin::Header -->
+            <!-- <div class="card-header border-0 pt-5">
+                <h3 class="card-title align-items-start flex-column">
+                    <span class="card-label fw-bolder fs-2 mb-1">All Banners</span>
+                </h3>
+                <div class="card-toolbar">
+                    <a (click)="addNewBanner()" class="btn btn-sm btn-light-primary">
+                        <span [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
+                            class="svg-icon svg-icon-3"></span>
+                        + New Banner
+                    </a>
+                </div>
+            </div> -->
+            <!-- end::Header -->
+            <!-- begin::Body -->
+            <div class="card-body py-3">
+                <!-- begin::Table container -->
+                <div class="table-responsive">
+                    <!-- begin::Table -->
+                    <table class="table align-middle gs-0 gy-4">
+                        <!-- begin::Table head -->
+                        <thead>
+                            <tr class="fw-bolder text-muted bg-light">
+                                <!-- <th class="ps-3 min-w-90px">S.No.</th>
+                                <th class="ps-3 min-w-120px"></th>
+                                <th class="ps-4 min-w-100px rounded-start">Category Name</th>
+                                <th class="min-w-110px">Created On</th>
+                                <th class="min-w-70px rounded-end"></th> -->
+                                <!--  -->
+                                <th class="ps-3 min-w-90px">S.No.</th>
+                                <th class="ps-3 min-w-90px">User ID</th>
+                                <th class="ps-3 min-w-90px">User Name</th>
+                                <th class="ps-3 min-w-90px">Email</th>
+                                <th class="ps-3 min-w-90px">Phone</th>
+                                <th class="ps-3 min-w-90px">Last Used Timestamp</th>
+                                <th class="ps-3 min-w-90px">Actions</th>
+                            </tr>
+                        </thead>
+                        <!-- end::Table head -->
+                        <!-- begin::Table body -->
+                        <tbody>
+                            <h2 *ngIf="allCategories.length==0; else categoryTable">No App users found!</h2>
+                            <ng-template #categoryTable>
+                                <tr
+                                    *ngFor="let category of allCategories| paginate :{itemsPerPage:8,currentPage:p};let i = index;">
+                                    <td>
+                                        <a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+                                            style="margin-left:15px;">
+                                            {{i+1}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                    {{category.categoryName | titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                    {{category.categoryName | titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                    {{category.categoryName | titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                    {{category.categoryName | titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                    {{category.categoryName | titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <!-- <a (click)="editUserDialog(category)"
+                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                            <span [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
+                                                class="svg-icon svg-icon-3"></span>
+                                        </a>
+                                        <a (click)="deleteUserDialog(category._id)"
+                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                            <span [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'"
+                                                class="svg-icon svg-icon-3"></span>
+                                        </a> -->
+
+                                        <!-- <a (click)="ViewDetails_AppUsers(category)"
+                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                            <span [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
+                                                class="svg-icon svg-icon-3"></span>
+                                        </a> -->
+                                        <!-- <button mat-stroked-button (click)="ViewDetails_AppUsers(category)">View Details</button> -->
+                                        <button mat-button (click)="ViewDetails_AppUsers(category)">View
+                                            Details</button>
+                                    </td>
+                                </tr>
+                            </ng-template>
+
+                        </tbody>
+                        <!-- end::Table body -->
+                    </table>
+                    <!-- end::Table -->
+                </div>
+                <!-- end::Table container -->
+            </div>
+            <!-- begin::Body -->
+        </div>
+
+        <div class="text-center">
+            <!-- pagination -->
+            <pagination-controls (pageChange)="p=$event"></pagination-controls>
+        </div>
+
+        <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise"
+            [fullScreen]="true">
+            <p style="color: white"> Loading... </p>
+        </ngx-spinner>
+    </mat-tab>
+    <mat-tab label="Business Users">
+        <br>
+        <div class="card mb-5 mb-xl-8">
+            <!-- begin::Header -->
+            <!-- <div class="card-header border-0 pt-5">
+                <h3 class="card-title align-items-start flex-column">
+                    <span class="card-label fw-bolder fs-2 mb-1">All Banners</span>
+                </h3>
+                <div class="card-toolbar">
+                    <a (click)="addNewBanner()" class="btn btn-sm btn-light-primary">
+                        <span [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
+                            class="svg-icon svg-icon-3"></span>
+                        + New Banner
+                    </a>
+                </div>
+            </div> -->
+            <!-- end::Header -->
+            <!-- begin::Body -->
+            <div class="card-body py-3">
+                <!-- begin::Table container -->
+                <div class="table-responsive">
+                    <!-- begin::Table -->
+                    <table class="table align-middle gs-0 gy-4">
+                        <!-- begin::Table head -->
+                        <thead>
+                            <tr class="fw-bolder text-muted bg-light">
+                                <!-- <th class="ps-3 min-w-90px">S.No.</th>
+                                <th class="ps-3 min-w-120px"></th>
+                                <th class="ps-4 min-w-100px rounded-start">Category Name</th>
+                                <th class="min-w-110px">Created On</th>
+                                <th class="min-w-70px rounded-end"></th> -->
+                                <!--  -->
+                                <th class="ps-3 min-w-90px">S.No.</th>
+                                <th class="ps-3 min-w-90px">User ID</th>
+                                <th class="ps-3 min-w-90px">User Name</th>
+                                <th class="ps-3 min-w-90px">Email</th>
+                                <th class="ps-3 min-w-90px">Phone</th>
+                                <th class="ps-3 min-w-90px">Last Used Timestamp</th>
+                                <th class="ps-3 min-w-90px">Actions</th>
+                            </tr>
+                        </thead>
+                        <!-- end::Table head -->
+                        <!-- begin::Table body -->
+                        <tbody>
+                            <h2 *ngIf="allCategories.length==0; else categoryTable_">No App users found!</h2>
+                            <ng-template #categoryTable_>
+                                <tr
+                                    *ngFor="let category of allCategories| paginate :{itemsPerPage:8,currentPage:p};let i = index;">
+                                    <td>
+                                        <a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+                                            style="margin-left:15px;">
+                                            {{i+1}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                    {{category.categoryName | titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                    {{category.categoryName | titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                    {{category.categoryName | titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                    {{category.categoryName | titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                    {{category.categoryName | titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <!-- <a (click)="editUserDialog(category)"
+                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                            <span [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
+                                                class="svg-icon svg-icon-3"></span>
+                                        </a>
+                                        <a (click)="deleteUserDialog(category._id)"
+                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                            <span [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'"
+                                                class="svg-icon svg-icon-3"></span>
+                                        </a> -->
+                                        <!-- <a (click)="ViewDetails_AppUsers(category)"
+                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                            <span [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
+                                                class="svg-icon svg-icon-3"></span>
+                                        </a> -->
+                                        <button mat-button (click)="ViewDetails_BusinessUsers(category)">View
+                                            Details</button>
+                                    </td>
+                                </tr>
+                            </ng-template>
+
+                        </tbody>
+                        <!-- end::Table body -->
+                    </table>
+                    <!-- end::Table -->
+                </div>
+                <!-- end::Table container -->
+            </div>
+            <!-- begin::Body -->
+        </div>
+
+        <div class="text-center">
+            <!-- pagination -->
+            <pagination-controls (pageChange)="p=$event"></pagination-controls>
+        </div>
+
+        <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise"
+            [fullScreen]="true">
+            <p style="color: white"> Loading... </p>
+        </ngx-spinner>
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card">
+      <div class="overlay d-none"> <small class="fa fa-close"></small> <img src="https://i.imgur.com/WInwkB8.jpg"> </div>
+      <div class="top-div"> 
+        <!-- <i class="fa fa-bars"></i> <i class="fa fa-envelope-o"></i>  -->
+      </div>
+      <div class="image">
+        <!-- <span>
+          <img id="userimage" src={{adminData.adminImage}} onerror="this.src='./assets/media/avatars/300-1.jpg'"> 
+        </span> -->
+        <div class="text-center imageDiv">
+          <img style="height: 100%;width: 100%;border-radius: 50%;" src={{adminData.adminImage}} 
+          onerror="this.src='./assets/media/avatars/300-1.jpg'"
+            class="main-profile-img" />
+          
+          <div class="iconClass" style="cursor: pointer;">
+          <div class="image-upload">
+            <label for="file-input">
+              <img src="./assets/edit-image-icon-1.jpg" style="cursor: pointer;" height="30px" width="30px">
+            </label>
+          
+            <input id="file-input" type="file" (change)="selectImage($event)" />
+          </div>
+          </div>
+  
+        </div>
+        <h3>{{adminData.firstName | titlecase}} {{adminData.lastName | titlecase}}</h3>
+        <h4><i class="fa fa-envelope" aria-hidden="true"></i> {{adminData.email}}</h4>
+      </div>
+      <div class="arc"> <span></span> </div>
+      <div class="social"> <i class="fa fa-facebook-square"></i> <i class="fa fa-instagram"></i> <i class="fa fa-google-plus"></i> <i class="fa fa-twitter"></i> </div>
+      <div class="button text-center">
+        <button (click)="editAdminDialog(adminData)" style="padding: 2px;"> <i class="fa fa-pen"></i> Edit Profile</button> 
+      </div>
+  </div>
+</div>
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-spin-clockwise" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>

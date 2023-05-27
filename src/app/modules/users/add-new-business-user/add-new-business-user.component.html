@@ -1,0 +1,111 @@
+<div style="display: flex; align-items: center; justify-content: space-between;">
+    <h2>Add New Business User</h2>
+    <!-- <div >
+        <i mat-dialog-title class="fa-solid fa-circle-xmark" style="font-size: 22px;"></i>
+    </div> -->
+</div>
+<br>
+<div class="container custom-class">
+    <div class="row">
+        <div class="col-md-6">
+            <input type="text" placeholder="Enter Business Name" class="form-control" cdkFocusInitial>
+        </div>
+        <div class="col-md-6">
+            <input type="email" placeholder="Enter Email" class="form-control">
+        </div>
+    </div> <br>
+    <div class="row">
+        <div class="col-md-6">
+            <input type="number" placeholder="Enter Phone" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <input type="text" placeholder="Enter Location" class="form-control">
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-md-6">
+            <select class="form-control">
+                <option value="" selected disabled>-- Select Operational Category --</option>
+                <option value="1">Category1</option>
+                <option value="2">Category2</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <input type="file" id="files" class="hidden" />
+                <label for="files" class="form-control uploadData">Upload Data &nbsp; <i style="color:black;"
+                        class="fa-solid fa-upload uploadicon"></i></label>
+            </div>
+
+        </div>
+    </div> <br>
+    <div class="row">
+        <div class="col-md-6">
+            <select class="form-control">
+                <option value="" selected disabled>--Select Type --</option>
+                <option value="1">Rent</option>
+                <option value="2">Sale</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <select class="form-control">
+                <option value="" selected disabled>--Select Category --</option>
+                <option value="1">Goods</option>
+                <option value="2">Services</option>
+                <option value="2">Space</option>
+            </select>
+        </div>
+    </div> <br>
+    <div class="row">
+        <div class="col-md-6">
+            <select class="form-control">
+                <option value="" selected disabled>--Select Sub-Category --</option>
+                <option value="1">C1</option>
+                <option value="2">C2</option>
+                <option value="3">C3</option>
+                <option value="4">C4</option>
+                <option value="5">C5</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <input type="file" id="files" class="hidden" />
+                <label for="files" class="form-control uploadData">Upload Images &nbsp; <i style="color:black;"
+                        class="fa-solid fa-upload uploadicon"></i></label>
+            </div>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-md-6">
+            <input type="text" placeholder="Add Title" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <input type="text" placeholder="Add Decription" class="form-control">
+        </div>
+    </div> <br>
+    <div class="row">
+        <div class="col-md-6">
+            <select class="form-control">
+                <option value="" selected disabled>--Select Type --</option>
+                <option value="1">Day</option>
+                <option value="2">Week</option>
+                <option value="3">Month</option>
+                <option value="3">For Sale</option>
+
+            </select>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <input type="text" placeholder="Add Budget" class="form-control">
+            </div>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-md-6">
+            <input type="text" placeholder="Add Location" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-success post-listing">Post Listing</button>
+        </div>
+    </div>
+</div>
